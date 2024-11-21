@@ -15,7 +15,7 @@ final class KTPService extends GlairAIAbstract
         $response = Http::withHeaders([
             'x-api-key' => $this->apiKey,
         ])
-            ->withBasicAuth('able-remittance', '1TuCQ7dUo2Yiz6ALFwer')
+            ->withBasicAuth($this->username, $this->password)
             ->attach('image', file_get_contents($imagePath), basename($imagePath))
             ->timeout(300)
             ->post($url);
@@ -31,7 +31,7 @@ final class KTPService extends GlairAIAbstract
         if(empty($response->body()))
             throw new \Exception('Empty response from server', 500);
 
-        if($read = $response->json()['read']){
+        if($read = $response->json()['read'] ?? null){
             return KYCResponse::make($read);
         }else{
             throw new \Exception('Failed to read image', 500);
