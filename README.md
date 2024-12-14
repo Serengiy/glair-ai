@@ -1,6 +1,11 @@
 ## SendPulse laravel package
 
 ### Installation
+
+```
+composer require serengiy/send-pulse
+```
+
 #### 1.	Add the Service Provider
 ```
 Serengiy\GlairAI\Providers\GlairAIServiceProvider::class
