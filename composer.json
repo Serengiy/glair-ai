@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Serengiy\\SendPulse\\": "src/"
+            "Serengiy\\GlairAI\\": "src/"
         }
     },
     "extra": {
