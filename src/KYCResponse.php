@@ -289,4 +289,33 @@ class KYCResponse
     {
         return $this->birthPlace ?? [];
     }
+
+
+    /**
+     * Convert the object to an array.
+     *
+     * @return array The array representation of the object.
+     */
+    public function toArray(): array
+    {
+        return [
+            'religion' => $this->religion,
+            'address' => $this->address,
+            'validUntil' => $this->validUntil,
+            'bloodType' => $this->bloodType,
+            'gender' => $this->gender,
+            'district' => $this->district,
+            'subdistrictVillage' => $this->subdistrictVillage,
+            'nationality' => $this->nationality,
+            'cityRegency' => $this->cityRegency,
+            'name' => $this->name,
+            'nik' => $this->nik,
+            'occupation' => $this->occupation,
+            'province' => $this->province,
+            'neighborhoodAssociation' => $this->neighborhoodAssociation,
+            'maritalStatus' => $this->maritalStatus,
+            'birthDate' => $this->birthDate,
+            'birthPlace' => $this->birthPlace,
+        ];
+    }
 }
