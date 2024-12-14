@@ -1,9 +1,9 @@
-## SendPulse laravel package
+## Glair AI laravel package
 
 ### Installation
 
 ```
-composer require serengiy/send-pulse
+composer require ablegroup/glair-ai
 ```
 
 #### 1.	Add the Service Provider
