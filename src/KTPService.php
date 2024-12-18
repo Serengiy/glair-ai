@@ -50,7 +50,8 @@ final class KTPService extends GlairAIAbstract
 
         if(count($payload) < 2)
             throw new \Exception(
-                'You must fill in at least one of the following: name, date_of_birth, liveness_fail_message, liveness_result, no_kk, mother_maiden_name, place_of_birth, address, gender, marital_status, job_type, province, city, district, subdistrict, rt, rw.'
+                'You must fill in at least one of the following: name, date_of_birth, liveness_fail_message, liveness_result, no_kk, mother_maiden_name, place_of_birth, address, gender, marital_status, job_type, province, city, district, subdistrict, rt, rw.',
+                400
             );
 
         $url = $this->url . '/identity/v1/verification';
