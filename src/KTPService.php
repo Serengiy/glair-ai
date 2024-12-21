@@ -46,7 +46,7 @@ final class KTPService extends GlairAIAbstract
     public function basicVerification(array $payload): array
     {
         if(!isset($payload['nik']))
-            throw new \Exception("'nik' field is required");
+            throw new \Exception("'nik' field is required", 400);
 
         if(count($payload) < 2)
             throw new \Exception(
@@ -64,7 +64,7 @@ final class KTPService extends GlairAIAbstract
             ->post($url, $payload);
 
         if(!$response->ok() && isset($response->json()['reason'])){
-            throw new \Exception($response->json()['reason']);
+            throw new \Exception($response->json()['reason'], 400);
         }
 
         if($response->ok()) {
